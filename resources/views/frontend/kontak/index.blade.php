@@ -26,17 +26,17 @@
                     <p class="mb-5"><i class="fa fa-envelope me-3"></i>{{ $kontak->email ?? '-' }}</p>
                     <h5 class="text-white">Office Address</h5>
                     <p class="mb-5"><i class="fa fa-map-marker-alt me-3"></i>{{ $kontak->address ?? '-' }}</p>
-                    <h5 class="text-white">Follow Us</h5>
-                    <div class="d-flex pt-2">
-                        <a class="btn btn-square btn-outline-light rounded-circle me-1"
-                            href="{{ $kontak->twitter ?? '#' }}"><i class="fab fa-twitter"></i></a>
-                        <a class="btn btn-square btn-outline-light rounded-circle me-1"
-                            href="{{ $kontak->facebook ?? '#' }}"><i class="fab fa-facebook-f"></i></a>
-                        <a class="btn btn-square btn-outline-light rounded-circle me-1"
-                            href="{{ $kontak->youtube ?? '#' }}"><i class="fab fa-youtube"></i></a>
-                        <a class="btn btn-square btn-outline-light rounded-circle me-0"
-                            href="{{ $kontak->linkedin ?? '#' }}"><i class="fab fa-linkedin-in"></i></a>
-                    </div>
+                    <!--<h5 class="text-white">Follow Us</h5>-->
+                    <!--<div class="d-flex pt-2">-->
+                    <!--    <a class="btn btn-square btn-outline-light rounded-circle me-1"-->
+                    <!--        href="{{ $kontak->twitter ?? '#' }}"><i class="fab fa-twitter"></i></a>-->
+                    <!--    <a class="btn btn-square btn-outline-light rounded-circle me-1"-->
+                    <!--        href="{{ $kontak->facebook ?? '#' }}"><i class="fab fa-facebook-f"></i></a>-->
+                    <!--    <a class="btn btn-square btn-outline-light rounded-circle me-1"-->
+                    <!--        href="{{ $kontak->youtube ?? '#' }}"><i class="fab fa-youtube"></i></a>-->
+                    <!--    <a class="btn btn-square btn-outline-light rounded-circle me-0"-->
+                    <!--        href="{{ $kontak->linkedin ?? '#' }}"><i class="fab fa-linkedin-in"></i></a>-->
+                    <!--</div>-->
                 </div>
             </div>
             <div class="col-lg-7 col-md-12 wow fadeInUp" data-wow-delay="0.5s">

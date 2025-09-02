@@ -52,7 +52,7 @@
     </div>
 </div>
 <script>
-    document.addEventListener('DOMContentLoaded', function() {
+    document.addEventListener('DOMContentLoaded', function () {
         const minusBtn = document.getElementById('btn-minus');
         const plusBtn = document.getElementById('btn-plus');
         const qtyInput = document.getElementById('quantity');
@@ -79,40 +79,45 @@
             const totalPrice = quantity * productPrice;
             const formattedPrice = new Intl.NumberFormat('id-ID').format(totalPrice);
             const imageUrl = `{{ url('/images/produk/' . $produk->image) }}`;
+            const phone = '{{ $kontak->whatsapp ?? '6281234567890' }}';
+        
+            // Buat pesan WhatsApp (pakai \n biasa lalu encode)
+            const message =
+            `Halo, saya ingin membeli produk:%0A%0A` +
+            `*${productName}*%0A` +
+            `Jumlah: ${quantity}%0A` +
+            `Total: Rp ${formattedPrice}%0A%0A`;
 
-            const phone = '{{ $kontak->whatsapp_number ?? '6281234567890' }}';
-            const message = `Halo, saya ingin membeli produk:\n\n` +
-                `*${productName}*\n` +
-                `Jumlah: ${quantity}\n` +
-                `Total: Rp ${formattedPrice}\n\n` +
-                `Gambar: ${imageUrl}`;
-            const whatsappURL = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
-
-            // Kirim data transaksi ke server
+const whatsappURL = `https://api.whatsapp.com/send?phone=${phone}&text=${message}`;
+        
+            // Debug (opsional)
+            console.log("WA Link:", whatsappURL);
+        
+            // Simpan ke server (jika perlu)
             fetch("/home/produk-detail/checkout", {
-                    method: "POST",
-                    headers: {
-                        "Content-Type": "application/json",
-                        "Accept": "application/json",
-                        "X-CSRF-TOKEN": document.querySelector('meta[name="csrf-token"]').content
-                    },
-                    body: JSON.stringify({
-                        product_id: productId,
-                        quantity: quantity,
-                        wa_link: whatsappURL,
-                    })
-                }).then(res => res.json())
-                .then(res => {
-                    if (res.success) {
-                        window.open(whatsappURL, '_blank');
-                    } else {
-                        alert("Gagal menyimpan transaksi.");
-                    }
-                }).catch(() => {
-                    alert("Terjadi kesalahan. Silakan coba lagi.");
-                });
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                    "Accept": "application/json",
+                    "X-CSRF-TOKEN": document.querySelector('meta[name="csrf-token"]').content
+                },
+                body: JSON.stringify({
+                    product_id: productId,
+                    quantity: quantity,
+                    wa_link: whatsappURL,
+                })
+            }).then(res => res.json())
+              .then(res => {
+                if (res.success) {
+                    window.open(whatsappURL, '_blank');
+                } else {
+                    alert("Gagal menyimpan transaksi.");
+                }
+              }).catch(() => {
+                alert("Terjadi kesalahan. Silakan coba lagi.");
+              });
         });
+
     });
 </script>
-
 @include('frontend.layouts.footer')

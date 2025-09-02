@@ -23,9 +23,10 @@
                     <p>Data Tidak Ditemukan</p>
                 @else
                     <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-                        <img class="img-fluid" src="/images/blog/{{ $blogs->image }}" alt="">
+                        <img class="img-fluid" src="/images/blog/{{ $blogs->thumbnail }}" alt="">
                         <div class="bg-light p-4">
-                            <a class="d-block h5 lh-base mb-4" href="#">{{ $blogs->title }}</a>
+                            <h5 class="d-block h5 lh-base" >{{ $blogs->title }}</h5>
+                            <p class="d-block text-muted lh-base mb-4" href="#">{{ $blogs->content }}</p>
                             <div class="text-muted border-top pt-4">
                                 <small class="me-3"><i
                                         class="fa fa-user text-primary me-2"></i>{{ $blogs->user->name }}</small>

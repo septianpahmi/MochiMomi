@@ -7,15 +7,15 @@
                     <h1 class="fw-bold text-primary mb-4">Mochi<span class="text-secondary">Momi</span></h1>
                     <p>Diam dolor diam ipsum sit. Aliqu diam amet diam et eos. Clita erat ipsum et lorem et sit, sed
                         stet lorem sit clita</p>
-                    <div class="d-flex pt-2">
-                        <a class="btn btn-square btn-outline-light rounded-circle me-1" href=""><i
-                                class="fab fa-twitter"></i></a>
-                        <a class="btn btn-square btn-outline-light rounded-circle me-1" href=""><i
-                                class="fab fa-facebook-f"></i></a>
-                        <a class="btn btn-square btn-outline-light rounded-circle me-1" href=""><i
-                                class="fab fa-youtube"></i></a>
-                        <!-- <a class="btn btn-square btn-outline-light rounded-circle me-0" href=""><i class="fab fa-linkedin-in"></i></a> -->
-                    </div>
+                    <div class="d-flex flex-wrap gap-2 pt-2">
+                        <!--<a class="btn btn-sm btn-square btn-outline-light rounded-circle d-flex align-items-center justify-content-center" style="width: 36px; height: 36px;" href="{{ $kontak->twitter }}"><i class="fab fa-twitter"></i></a>-->
+                            <a class="btn btn-sm btn-square btn-outline-light rounded-circle d-flex align-items-center justify-content-center" 
+                               style="width: 36px; height: 36px;" href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a class="btn btn-sm btn-square btn-outline-light rounded-circle d-flex align-items-center justify-content-center" 
+                               style="width: 36px; height: 36px;" href="#"><i class="fab fa-youtube"></i></a>
+                            <!-- <a class="btn btn-sm btn-square btn-outline-light rounded-circle d-flex align-items-center justify-content-center" 
+                               style="width: 36px; height: 36px;" href="#"><i class="fab fa-linkedin-in"></i></a> -->
+                        </div>
                 </div>
                 <div class="col-lg-4 col-md-6">
                     <h4 class="text-light mb-4">Contact</h4>
@@ -37,17 +37,18 @@
             <div class="row g-5">
                 <div class="col-lg-4 col-md-6">
                     <h1 class="fw-bold text-primary mb-4">Mochi<span class="text-secondary">Momi</span></h1>
-                    <p>Diam dolor diam ipsum sit. Aliqu diam amet diam et eos. Clita erat ipsum et lorem et sit, sed
-                        stet lorem sit clita</p>
-                    <div class="d-flex pt-2">
-                        <a class="btn btn-square btn-outline-light rounded-circle me-1" href="{{ $kontak->twitter }}"
-                            target="_blank"><i class="fab fa-twitter"></i></a>
-                        <a class="btn btn-square btn-outline-light rounded-circle me-1" href="{{ $kontak->facebook }}"
-                            target="_blank"><i class="fab fa-facebook-f"></i></a>
-                        <a class="btn btn-square btn-outline-light rounded-circle me-1" href="{{ $kontak->youtube }}"
-                            target="_blank"><i class="fab fa-youtube"></i></a>
-                        <!-- <a class="btn btn-square btn-outline-light rounded-circle me-0" href=""><i class="fab fa-linkedin-in"></i></a> -->
-                    </div>
+                    <!--<p>Diam dolor diam ipsum sit. Aliqu diam amet diam et eos. Clita erat ipsum et lorem et sit, sed-->
+                    <!--    stet lorem sit clita</p>-->
+                        <div class="d-flex flex-wrap gap-2 pt-2">
+                            <!--<a class="btn btn-sm btn-square btn-outline-light rounded-circle d-flex align-items-center justify-content-center" -->
+                            <!--   style="width: 36px; height: 36px;" href="{{ $kontak->twitter }}"><i class="fab fa-twitter"></i></a>-->
+                            <a class="btn btn-sm btn-square btn-outline-light rounded-circle d-flex align-items-center justify-content-center" 
+                               style="width: 36px; height: 36px;" href="{{ $kontak->facebook }}"><i class="fab fa-facebook-f"></i></a>
+                            <a class="btn btn-sm btn-square btn-outline-light rounded-circle d-flex align-items-center justify-content-center" 
+                               style="width: 36px; height: 36px;" href="{{ $kontak->youtube }}"><i class="fab fa-youtube"></i></a>
+                            <!-- <a class="btn btn-sm btn-square btn-outline-light rounded-circle d-flex align-items-center justify-content-center" 
+                               style="width: 36px; height: 36px;" href="#"><i class="fab fa-linkedin-in"></i></a> -->
+                        </div>
                 </div>
                 <div class="col-lg-4 col-md-6">
                     <h4 class="text-light mb-4">Contact</h4>
@@ -71,11 +72,11 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
-                    &copy; <a href="#">Sptnpahmi</a>, All Right Reserved.
+                    &copy; <a href="#">CocodeTechWorks</a>, All Right Reserved.
                 </div>
                 <div class="col-md-6 text-center text-md-end">
                     <!--/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/-->
-                    Designed By <a href="#">Adikuncoro</a>
+                    Designed By <a href="#">CocodeTechWork</a>
                 </div>
             </div>
         </div>
@@ -83,10 +84,11 @@
 </div>
 <!-- Footer End -->
 
-
 <!-- Back to Top -->
-<a href="#" class="btn btn-lg btn-primary btn-lg-square rounded-circle back-to-top"><i
-        class="bi bi-arrow-up"></i></a>
+<a href="#" class="btn btn-primary rounded-circle back-to-top d-flex align-items-center justify-content-center"
+   style="width: 45px; height: 45px;">
+    <i class="bi bi-arrow-up"></i>
+</a>
 
 
 <!-- JavaScript Libraries -->
@@ -159,7 +161,6 @@
         toastr.error("{{ Session::get('error') }}", 'Gagal!')
     @endif
 </script>
-
 
 </body>
 
